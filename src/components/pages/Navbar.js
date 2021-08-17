@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className="container d-flex align-items-center">
 
       <div className="logo mr-auto">
-        <h1 className="text-light"><a href="">React Website</a></h1>
+        <h1 className="text-light"><NavLink exact to="/">React Website</NavLink></h1>
       </div>
 
       <nav className="nav-menu d-none d-lg-block">
@@ -18,7 +18,7 @@ const Navbar = () => {
           <li><NavLink exact to="/multiple_comp_in_single_comp">Multi comp in sing comp</NavLink></li>
           <li><NavLink exact to="/props">Props</NavLink></li>
           <li><NavLink exact to="/state_in_component">State in class Component</NavLink></li>
-          <li><NavLink exact to="/">Team</NavLink></li>
+          <li><NavLink exact to="/component_life_cycle">Component life cycle methods</NavLink></li>
           <li><NavLink exact to="/">Contact</NavLink></li>
         </ul>
       </nav>
