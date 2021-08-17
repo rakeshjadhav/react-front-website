@@ -15,7 +15,7 @@ const Navbar = () => {
         <ul>
           <li><NavLink exact to="/" >Home</NavLink></li>
           <li><NavLink exact to="/product">Class Component</NavLink></li>
-          <li><NavLink exact to="/">Services</NavLink></li>
+          <li><NavLink exact to="/multiple_comp_in_single_comp">Multi comp in sing comp</NavLink></li>
           <li><NavLink exact to="/">Portfolio</NavLink></li>
           <li><NavLink exact to="/">Pricing</NavLink></li>
           <li><NavLink exact to="/">Team</NavLink></li>
