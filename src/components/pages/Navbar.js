@@ -1,34 +1,29 @@
 import React  from "react";
-// import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link,NavLink } from "react-router-dom";
-
 
 const Navbar = () => {
   
     return (
-<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="/">React Application</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" >
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <NavLink className="nav-link" aria-current="page" exact to="/"  >Home</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" exact to="/aboutus" >About</NavLink>
-        </li>
-        
-        <li className="nav-item">
-          <NavLink className="nav-link" exact to="/contact">Contact us</NavLink>
-        </li>
-      </ul>
-      
+<header id="header" className="fixed-top d-flex align-items-center  header-transparent ">
+    <div className="container d-flex align-items-center">
+
+      <div className="logo mr-auto">
+        <h1 className="text-light"><a href="">React Website</a></h1>
+      </div>
+
+      <nav className="nav-menu d-none d-lg-block">
+        <ul>
+          <li><NavLink exact to="/" >Home</NavLink></li>
+          <li><NavLink exact to="/product">Class Component</NavLink></li>
+          <li><NavLink exact to="/">Services</NavLink></li>
+          <li><NavLink exact to="/">Portfolio</NavLink></li>
+          <li><NavLink exact to="/">Pricing</NavLink></li>
+          <li><NavLink exact to="/">Team</NavLink></li>
+          <li><NavLink exact to="/">Contact</NavLink></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</nav>
+  </header>
     );
 };
 
