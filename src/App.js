@@ -24,6 +24,11 @@ import Multiple_comp_in_single_comp from "./components/pages/Multiple_comp_in_si
 import Props from './components/pages/Props';
 import State_in_component from './components/pages/State_in_component';
 import Component_life_cycle from './components/pages/Component_life_cycle';
+
+import Blog from './components/pages/Blog';
+import Blogs from './components/pages/Blogs';
+import Blogdeatils from './components/pages/Blogdeatils'
+
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -44,6 +49,8 @@ function App() {
            <Route exact path="/props" component={() => <Props title={`Props through component`} description={"description here!!!!"} />} />
            <Route exact path="/State_in_component" component={State_in_component} />
            <Route exact path="/Component_life_cycle" component={Component_life_cycle} />
+           <Route exact path="/Blog" component={Blog} />
+           <Route exact path="/Blogdeatils/:id" component={Blogdeatils} />
        </Switch> 
      
     </div>

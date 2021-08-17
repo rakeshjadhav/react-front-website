@@ -19,7 +19,7 @@ const Navbar = () => {
           <li><NavLink exact to="/props">Props</NavLink></li>
           <li><NavLink exact to="/state_in_component">State in class Component</NavLink></li>
           <li><NavLink exact to="/component_life_cycle">Component life cycle methods</NavLink></li>
-          <li><NavLink exact to="/">Contact</NavLink></li>
+          <li><NavLink exact to="/Blog">Blogs</NavLink></li>
         </ul>
       </nav>
     </div>
