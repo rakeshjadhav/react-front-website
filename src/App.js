@@ -20,6 +20,7 @@ import Aboutus from "./components/pages/Aboutus";
 import Contact from "./components/pages/Contact";
 import Navbar from "./components/pages/Navbar";
 import Product from './components/pages/Products';
+import Multiple_comp_in_single_comp from "./components/pages/Multiple_comp_in_single_comp";
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -36,7 +37,7 @@ function App() {
        <Switch>
            <Route exact path="/" component={Home} />
            <Route exact path="/product" component={Product} />
-           <Route exact path="/contact" component={Contact} />
+           <Route exact path="/multiple_comp_in_single_comp" component={Multiple_comp_in_single_comp} />
        </Switch> 
      
     </div>
