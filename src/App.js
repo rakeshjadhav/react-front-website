@@ -21,7 +21,7 @@ import Contact from "./components/pages/Contact";
 import Navbar from "./components/pages/Navbar";
 import Product from './components/pages/Products';
 import {Helmet} from "react-helmet";
-
+import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
 
 
@@ -31,20 +31,6 @@ function App() {
     <>
     <Router>
     <div className="">
-    <Helmet>
-            <script src="../assets/vendor/jquery/jquery.min.js"  crossorigin="anonymous" type="text/javascript"/>
-            {/* <script src="../assets/vendor/jquery/jquery.min.js"  crossorigin="anonymous" type="text/javascript"/> */}
-            <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous" type="text/javascript"/>
-            {/* <script src="../assets/vendor/jquery.easing/jquery.easing.min.js" crossorigin="anonymous" type="text/javascript"/> */}
-            <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" crossorigin="anonymous" type="text/javascript"/>
-            <script src="../assets/vendor/venobox/venobox.min.js" crossorigin="anonymous" type="text/javascript"/>
-            <script src="../assets/vendor/owl.carousel/owl.carousel.min.js" crossorigin="anonymous" type="text/javascript"/>
-            <script src="../assets/vendor/aos/aos.js" crossorigin="anonymous" type="text/javascript"/>
-            <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-            {/* <script src="../assets/vendor/jquery/jquery.min.js"  crossorigin="anonymous" type="text/javascript"/> */}
-            <script src="../assets/js/main.js" crossorigin="anonymous" type="text/javascript"/>
-        
-            </Helmet>
        <Navbar />
       
        <Switch>
