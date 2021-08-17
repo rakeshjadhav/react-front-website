@@ -21,6 +21,7 @@ import Contact from "./components/pages/Contact";
 import Navbar from "./components/pages/Navbar";
 import Product from './components/pages/Products';
 import Multiple_comp_in_single_comp from "./components/pages/Multiple_comp_in_single_comp";
+import Props from './components/pages/Props';
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -38,6 +39,7 @@ function App() {
            <Route exact path="/" component={Home} />
            <Route exact path="/product" component={Product} />
            <Route exact path="/multiple_comp_in_single_comp" component={Multiple_comp_in_single_comp} />
+           <Route exact path="/props" component={() => <Props title={`Props through component`} description={"description here!!!!"} />} />
        </Switch> 
      
     </div>
