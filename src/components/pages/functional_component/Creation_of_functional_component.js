@@ -1,5 +1,9 @@
 import React,{useState} from "react";
-import reactDom from "react-dom";
+// import reactDom from "react-dom";
+import "../../../App.css";
+import { NavLink } from "react-router-dom";
+// import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
+// import UseState_hook from "./React_hooks/UseState_hook";
 
 
 const Creation_of_functional_component =() =>{
@@ -27,13 +31,21 @@ const Creation_of_functional_component =() =>{
                            <li>There are some benefits you get by using functional components in React. Functional components are easier to read and its testable(because these are plain JavaScript functions).
                            </li>
                       </ul>
-
-                      <h3>Counter App using Functional Component : </h3>
+                      <div className="card">
+                          
+                          Example
+                          <h3>Counter App using Functional Component : </h3>
                       <h1 className="text-center">{count}</h1>
                       <div className="text-center">
                       <button  className="btn btn-primary" onClick={increase}>Add</button>
                         <button className="btn btn-danger" onClick={decrease}>Min</button>
                       </div>
+                          </div>
+                          <div className="nextPage">
+                              
+                              <NavLink exact to="/UseState_hook">Next Topic Introducing Hooks </NavLink>
+                            </div>
+                 
                         
                 </div>
            </div>
@@ -46,12 +58,8 @@ const Creation_of_functional_component =() =>{
     const createFunction =()=>{
        
          return(
-             <div>
-                       
-                 <Creation_of_functional_component/>
-
-               
-                
+             <div>    
+                 <Creation_of_functional_component />
              </div>
          )
     }
