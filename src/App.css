@@ -35,14 +35,18 @@
   }
 
   .nextPage{
-      padding: 25px;
+      /* padding: 25px; */
       text-align: right;
       font-weight: bold;
     }
 
     .backPage{
-        padding: 25px;
+        padding-top: 25px;
         text-align: left;
         font-weight: bold;
+      }
+
+      .texttransform{
+          text-transform: none !important;
       }
   

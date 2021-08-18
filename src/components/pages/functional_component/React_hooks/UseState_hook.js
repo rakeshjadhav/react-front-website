@@ -40,11 +40,14 @@ function UseState_hook() {
                         
                       </div>
                           </div>
-                          <div className="backPage">
+                          <div className="backPage"><NavLink exact to="/Creation_of_functional_component">Back Topic Functional Component </NavLink></div> 
                               
-                              <NavLink exact to="/Creation_of_functional_component">Back Topic Functional Component </NavLink>
-                            </div>
-                 
+                          <div className="nextPage"><NavLink exact to="/UseEffect_hook">Next Topic useEffect Hook </NavLink>
+                                 
+                                </div> 
+                                 
+                            
+                            
                         
                 </div>
            </div>

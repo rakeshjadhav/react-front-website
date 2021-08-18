@@ -31,6 +31,8 @@ import Blogdeatils from './components/pages/blog/Blogdeatils'
 
 import Creation_of_functional_component from './components/pages/functional_component/Creation_of_functional_component';
 import UseState_hook from './components/pages/functional_component/React_hooks/UseState_hook';
+import UseEffect_hook from './components/pages/functional_component/React_hooks/UseEffect_hook';
+import Use_props from './components/pages/functional_component/React_hooks/Use_props';
 
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
@@ -57,6 +59,8 @@ function App() {
 
            <Route exact path="/Creation_of_functional_component" component={Creation_of_functional_component} />
            <Route exact path="/UseState_hook" component={UseState_hook} />
+           <Route exact path="/UseEffect_hook" component={UseEffect_hook} />
+           <Route exact path="/Use_props" component={Use_props} />
        </Switch> 
      
     </div>
