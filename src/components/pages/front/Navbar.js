@@ -20,6 +20,8 @@ const Navbar = () => {
           <li><NavLink exact to="/state_in_component">State in class Component</NavLink></li>
           <li><NavLink exact to="/component_life_cycle">Component life cycle methods</NavLink></li>
           <li><NavLink exact to="/Blog">Blogs</NavLink></li>
+          <li><NavLink exact to="/Creation_of_functional_component">Functional Component </NavLink></li>
+          <li><NavLink exact to="/UseState_hook">UseState_hook </NavLink></li>
         </ul>
       </nav>
     </div>
