@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import { isCompositeComponent } from "react-dom/test-utils";
+// import { isCompositeComponent } from "react-dom/test-utils";
 
 const Blogs = (props) => {
     const renderlist = ({datalist}) =>{
@@ -8,7 +8,7 @@ const Blogs = (props) => {
             return datalist.map((item)  => {
                 return (
   <div>
-      <img src={`../../assets/img/${item.image}`} style ={{width:'150px'}}  />
+      <img src={`../../assets/img/${item.image}`} style ={{width:'150px'}} alt=""  />
       <h2>{item.title}</h2>
       <p>{item.author}</p>
       <Link to = {`/BlogDeatils/${item.id}`} key={item.id} >Read More</Link>

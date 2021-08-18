@@ -14,20 +14,20 @@ import './App.css';
  import './assets/vendor/aos/aos.css';
  import './assets/css/style.css';
 
-import Home from "./components/pages/Home";
+import Home from "./components/pages/front/Home";
 // import Main from "./components/pages/Main";
 // import Aboutus from "./components/pages/Aboutus";
 // import Contact from "./components/pages/Contact";
-import Navbar from "./components/pages/Navbar";
-import Product from './components/pages/Products';
+import Navbar from "./components/pages/front/Navbar";
+import Product from './components/pages/class_components/Products';
 import Multiple_comp_in_single_comp from "./components/pages/Multiple_comp_in_single_comp";
 import Props from './components/pages/Props';
 import State_in_component from './components/pages/State_in_component';
 import Component_life_cycle from './components/pages/Component_life_cycle';
 
-import Blog from './components/pages/Blog';
-import Blogs from './components/pages/Blogs';
-import Blogdeatils from './components/pages/Blogdeatils'
+import Blog from './components/pages/blog/Blog';
+import Blogs from './components/pages/blog/Blogs';
+import Blogdeatils from './components/pages/blog/Blogdeatils'
 
 import {Helmet} from "react-helmet";
 import $ from 'jquery';

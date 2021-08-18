@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Navbar from './Navbar';
+import Navbar from '../front/Navbar';
 import { Link,NavLink } from "react-router-dom";
 const url = " http://localhost:8900/blog";
 
@@ -50,7 +50,7 @@ const url = " http://localhost:8900/blog";
 
     <div className="portfolio-description">
     <h1>Blog details page for id {params.id}</h1>
-                <img src={`../../assets/img/${this.state.details.image}`} style ={{width:'150px'}}  />
+                <img src={`../../assets/img/${this.state.details.image}`} style ={{width:'150px'}} alt="" />
                 <h2>{this.state.details.title}</h2>
                 <p>{this.state.details.author}</p>
       
