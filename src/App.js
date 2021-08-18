@@ -29,6 +29,10 @@ import Blog from './components/pages/blog/Blog';
 import Blogs from './components/pages/blog/Blogs';
 import Blogdeatils from './components/pages/blog/Blogdeatils'
 
+
+import UseState_function from './components/pages/functional_component/UseState_function';
+import Creation_of_functional_component from './components/pages/functional_component/Creation_of_functional_component';
+
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -51,6 +55,9 @@ function App() {
            <Route exact path="/Component_life_cycle" component={Component_life_cycle} />
            <Route exact path="/Blog" component={Blog} />
            <Route exact path="/Blogdeatils/:id" component={Blogdeatils} />
+
+           <Route exact path="/Creation_of_functional_component" component={Creation_of_functional_component} />
+           <Route exact path="/UseState_function" component={UseState_function} />
        </Switch> 
      
     </div>
