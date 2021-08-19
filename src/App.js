@@ -37,6 +37,8 @@ import Use_props from './components/pages/functional_component/React_hooks/Use_p
 
 import UseRef_hook from './components/pages/functional_component/React_hooks/UseRef_hook';
 import UseCallback_hook from './components/pages/functional_component/React_hooks/UseCallback_hook';
+import UseContext_hook from './components/pages/functional_component/React_hooks/UseContext_hook';
+import Contextbutton from './components/pages/functional_component/React_hooks/Contextbutton';
 
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
@@ -67,6 +69,8 @@ function App() {
            <Route exact path="/Use_props" component={Use_props} />
            <Route exact path ="/UseRef_hook" component={UseRef_hook} />
            <Route exact path ="/UseCallback_hook" component={UseCallback_hook} />
+           <Route exact path ="/UseContext_hook" component={UseContext_hook} />
+           <Route exact path ="/Contextbutton" component={Contextbutton} />
        </Switch> 
      
     </div>
