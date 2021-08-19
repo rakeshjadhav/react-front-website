@@ -40,6 +40,8 @@ import UseCallback_hook from './components/pages/functional_component/React_hook
 import UseContext_hook from './components/pages/functional_component/React_hooks/UseContext_hook';
 import Contextbutton from './components/pages/functional_component/React_hooks/Contextbutton';
 
+import Counter_custom_hook from './components/pages/functional_component/custom_hook/Counter_custom_hook';
+
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -71,6 +73,7 @@ function App() {
            <Route exact path ="/UseCallback_hook" component={UseCallback_hook} />
            <Route exact path ="/UseContext_hook" component={UseContext_hook} />
            <Route exact path ="/Contextbutton" component={Contextbutton} />
+           <Route exact path ="/Counter_custom_hook" component={Counter_custom_hook} />
        </Switch> 
      
     </div>
