@@ -34,6 +34,9 @@ import UseState_hook from './components/pages/functional_component/React_hooks/U
 import UseEffect_hook from './components/pages/functional_component/React_hooks/UseEffect_hook';
 import Use_props from './components/pages/functional_component/React_hooks/Use_props';
 
+
+import UseRef_hook from './components/pages/functional_component/React_hooks/UseRef_hook';
+
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -61,6 +64,7 @@ function App() {
            <Route exact path="/UseState_hook" component={UseState_hook} />
            <Route exact path="/UseEffect_hook" component={UseEffect_hook} />
            <Route exact path="/Use_props" component={Use_props} />
+           <Route exact path ="/UseRef_hook" component={UseRef_hook} />
        </Switch> 
      
     </div>
