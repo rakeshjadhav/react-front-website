@@ -36,6 +36,7 @@ import Use_props from './components/pages/functional_component/React_hooks/Use_p
 
 
 import UseRef_hook from './components/pages/functional_component/React_hooks/UseRef_hook';
+import UseCallback_hook from './components/pages/functional_component/React_hooks/UseCallback_hook';
 
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
@@ -65,6 +66,7 @@ function App() {
            <Route exact path="/UseEffect_hook" component={UseEffect_hook} />
            <Route exact path="/Use_props" component={Use_props} />
            <Route exact path ="/UseRef_hook" component={UseRef_hook} />
+           <Route exact path ="/UseCallback_hook" component={UseCallback_hook} />
        </Switch> 
      
     </div>

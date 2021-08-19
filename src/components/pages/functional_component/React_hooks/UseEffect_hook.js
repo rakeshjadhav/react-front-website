@@ -44,7 +44,7 @@ function UseEffect_hook() {
                           </div>
                           <div className="backPage">
                               
-                              <NavLink exact to="/Creation_of_functional_component">Next Topic Functional Component </NavLink>
+                              <NavLink exact to="/UseState_hook">Next Topic UseState() Hook </NavLink>
                             </div>
                             <div className="nextPage">
                                 <NavLink exact to="/UseRef_hook">Next Topic UseRef Hook </NavLink>
