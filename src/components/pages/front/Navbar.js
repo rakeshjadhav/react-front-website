@@ -22,6 +22,7 @@ const Navbar = () => {
           <li><NavLink exact to="/Blog">Blogs</NavLink></li>
           <li><NavLink exact to="/Creation_of_functional_component">Functional Component </NavLink></li>
           <li><NavLink exact to="/Creation_of_pure_components">Pure Component </NavLink></li>
+          <li><NavLink exact to="/Higher_order_components">Higher order components</NavLink></li>
         </ul>
       </nav>
     </div>
