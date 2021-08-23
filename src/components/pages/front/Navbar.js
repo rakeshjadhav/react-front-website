@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   
     return (
-<header id="header" className="fixed-top d-flex align-items-center  header-transparent ">
-    <div className="container d-flex align-items-center">
+<header id="header" className="fixed-top d-flex align-items-center  header-transparent hidennavbar ">
+    <div className="container d-flex align-items-center ">
 
       <div className="logo mr-auto">
         <h1 className="text-light"><NavLink exact to="/">React Website</NavLink></h1>
@@ -23,6 +23,9 @@ const Navbar = () => {
           <li><NavLink exact to="/Creation_of_functional_component">Functional Component </NavLink></li>
           <li><NavLink exact to="/Creation_of_pure_components">Pure Component </NavLink></li>
           <li><NavLink exact to="/Higher_order_components">Higher order components</NavLink></li>
+       
+          <li><NavLink exact to="/User">User Panel</NavLink></li>
+          
         </ul>
       </nav>
     </div>

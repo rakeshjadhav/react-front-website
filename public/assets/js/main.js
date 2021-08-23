@@ -204,4 +204,8 @@
     aos_init();
   });
 
+  $('#exampleModalCenter').modal({
+    backdrop: 'static',
+    keyboard: false
+})
 })(jQuery);

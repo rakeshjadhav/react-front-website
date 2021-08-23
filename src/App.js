@@ -44,6 +44,9 @@ import Counter_custom_hook from './components/pages/functional_component/custom_
 
 import Creation_of_pure_components from './components/pages/functional_component/React_hooks/pure_component/Creation_of_pure_components';
 import Higher_order_components from './components/pages/higher_order_components/Higher_order_components';
+
+
+import User from './components/pages/user_panel/User';
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -78,6 +81,8 @@ function App() {
            <Route exact path ="/Counter_custom_hook" component={Counter_custom_hook} />
            <Route exact path ="/Creation_of_pure_components" component={Creation_of_pure_components} />
            <Route exact path ="/Higher_order_components" component={Higher_order_components} />
+
+           <Route exact path ="/User" component={User} />
        </Switch> 
      
     </div>
