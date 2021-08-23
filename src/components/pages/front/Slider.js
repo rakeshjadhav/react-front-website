@@ -1,7 +1,7 @@
 
 import React  from "react";
-import {Component } from 'react';
-import { Link,NavLink } from "react-router-dom";
+// import {Component } from 'react';
+// import { Link,NavLink } from "react-router-dom";
 
 class Slider extends React.Component {
 
