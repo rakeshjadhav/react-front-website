@@ -1,27 +1,37 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
+import { BrowserRouter as Router, Route , Switch,Redirect,useHistory } from "react-router-dom";
 // import Axios from 'axios';
-
 import UserNavbar from "./UserNavbar";
 
+
 function User() {
-   
+  
+
 const [user_firstnameReg, setUser_firstname] = useState('');
 const [user_lastnameReg, setUser_lastname] = useState('');
 const [user_emailReg, setUser_email] = useState('');
 const [usernameReg, setUsername] = useState('');
 const [passwordReg, setPassword] = useState('');
+const [genderReg, setGender] = useState('');
 
-
+const [regsisStatus,setregisStatus] = useState([]);
 const [loginStatus,setLogstatus] = useState("");
 
 
 const [usernameLog, setUsernameLog] = useState('');
 const [passwordLog, setPasswordLog] = useState('');
 
-const [genderReg, setGender] = useState('');
 
+const history = useHistory();
+
+useEffect(() => {
+    if(localStorage.getItem('user-info')) {
+        history.push("/user")
+    }
+})
 const register  = () => {
+    
     axios.post("http://localhost:5000/api/users/regsiter", {
         method: 'POST',
         headers: {
@@ -36,6 +46,28 @@ const register  = () => {
         gender : genderReg,
     }).then((response) => {
         console.log(response);
+        if(response.data.error ? true : false){
+            setregisStatus(response.data.message);
+            // history.push('/User');
+            history.push(
+                {
+                    pathname: '/Sucess',
+                     user: response.data,
+                  
+                });
+        }else{
+           
+            const f_name = response.data.data.errors.user_firstname;
+            const l_name = response.data.data.errors.user_lastname;
+            const err_email = response.data.data.errors.user_email;
+            const err_uname = response.data.data.errors.username;
+            const err_upass = response.data.data.errors.password;
+
+            setregisStatus([f_name,l_name,err_email,err_uname,err_upass]); 
+
+           
+
+        }
     })
 }
 
@@ -50,14 +82,21 @@ const login  = () => {
        password : passwordLog,
     }).then((response) => {
         console.log(response);
-
-        if(response.data.message){
+        if(response.data.error ? true : false){
             setLogstatus(response.data.message);
+            history.push(
+                {
+                    pathname: '/Dashboard',
+                    state: response.data,
+                  
+                });
         }else{
-            setLogstatus(response.data[0].user_firstname)
+            setLogstatus(response.data.message);
         }
+       
     })
 }
+
 
  return (
         <>
@@ -104,11 +143,15 @@ const login  = () => {
                     <div className="modal-body">
                     <div className="row">
                         <article className="card-body">
+                       <span style={{color:"red"}}>{regsisStatus}</span>
+
+                       {/* <ErrorHandling rerror={regsisStatus} /> */}
+                           
                        
                             <div className="form-row">
                                 <div className="col form-group">
                                     <label>First name </label>   
-                                    <input type="text" name="firstname"  onChange={(e) => {
+                                    <input type="text" name="firstname" className="form-control" onChange={(e) => {
                                         setUser_firstname(e.target.value);
                                     }}  />
                                     
@@ -144,12 +187,12 @@ const login  = () => {
                             <div className="form-group">
                             <label>Gender</label> <br/>
                                     <label className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" name="gender" value="option1"  onChange={(e) => {
+                                <input className="form-check-input" type="radio" name="gender" value="male"  onChange={(e) => {
                                         setGender(e.target.value); }}/>
                                 <span className="form-check-label"> Male </span>
                                 </label>
                                 <label className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" name="gender" value="option2" onChange={(e) => {
+                                <input className="form-check-input" type="radio" name="gender" value="female" onChange={(e) => {
                                         setGender(e.target.value); }} />
                                 <span className="form-check-label"> Female</span>
                                 </label>
@@ -161,7 +204,7 @@ const login  = () => {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" onClick={register}>Save changes</button>
+                        <button type="button" className="btn btn-primary" onClick={register}>Save</button>
                     </div>
                     </div>
                 </div>
@@ -173,7 +216,7 @@ const login  = () => {
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLongTitle">User Register</h5>
+                        <h5 className="modal-title" id="exampleModalLongTitle">User Login</h5>
                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -202,7 +245,7 @@ const login  = () => {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" onClick={login}>Save changes</button>
+                        <button type="button" className="btn btn-primary" onClick={login}>Login</button>
                       
                    
                     </div>
@@ -214,6 +257,10 @@ const login  = () => {
         
     );
 
+
+
 }
+
+
  export default User;
   

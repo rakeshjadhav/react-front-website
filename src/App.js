@@ -47,6 +47,9 @@ import Higher_order_components from './components/pages/higher_order_components/
 
 
 import User from './components/pages/user_panel/User';
+import Dashboard from './components/pages/user_panel/Dashboard';
+import Sucess from './components/pages/user_panel/Sucess';
+
 import {Helmet} from "react-helmet";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -83,6 +86,8 @@ function App() {
            <Route exact path ="/Higher_order_components" component={Higher_order_components} />
 
            <Route exact path ="/User" component={User} />
+           <Route exact path ="/Dashboard" component={Dashboard} />
+           <Route exact path ="/Sucess" component={Sucess} />
        </Switch> 
      
     </div>
