@@ -2,7 +2,9 @@ import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route , Switch,Redirect,useHistory,useLocation } from "react-router-dom";
 // import Axios from 'axios';
+import '../../../User.css';
 import UserNavbar from "./UserNavbar";
+import authHeader from './AuthHeader';
 
 
 function Dashboard(props) {
@@ -11,10 +13,17 @@ function Dashboard(props) {
   const history = useHistory();
    const userData = localStorage.getItem('userinfo');
    const stringify = JSON.parse(userData);
-   console.log(stringify)
-
+//    console.log(userData);
+  
+   if (userData === null) {
+       history.push("/User");
+  }
     useEffect(() => {
-       
+        
+        if(!localStorage.getItem('userinfo')) {
+            history.push("/User")
+        }
+        
         // viewProfile();
     })
     let [responseData, setResponseData] = useState([]);
@@ -26,10 +35,23 @@ function Dashboard(props) {
     const [usernameReg, setUsername] = useState('');
     const [passwordReg, setPassword] = useState('');
     const [genderReg, setGender] = useState('');
+
+    // const [loggedOut, setLoggedOut] = useState(false)
     // alert(user_firstnameReg);
+//    const logout = () => {
+//        window.localStorage.clear();
+//     //  history.push("/User")
+//     }
+    const logout = () => {
+        alert("Are You Sure You Want To Log Out ??");
+        window.localStorage.clear();
+        history.push("/User")
+    
+      };
+   
     const viewProfile  = user_id => () => {
       
-      axios.get(`http://localhost:5000/api/users/get_profile/${user_id}`, {
+      axios.get(`http://localhost:5000/api/users/get_profile/${user_id}`,{ headers: authHeader() }, {
           method: 'GET',
           headers: {
               'Accept': 'application/json',
@@ -66,10 +88,10 @@ function Dashboard(props) {
         }).then((response) => {
             if(response.data.error ? true : false){
                 setregisStatus(response.data.message);
-                window.localStorage.removeItem("userinfo");
-                const userData = localStorage.setItem('userinfo',JSON.stringify(response.data.data))
-                const stringify = JSON.parse(userData);
-                // window.location.reload(false);
+                // window.localStorage.removeItem("userinfo");
+                // const userData = localStorage.setItem('userinfo',JSON.stringify(response.data.data))
+                // const stringify = JSON.parse(userData);
+                window.location.reload(false);
 
                 // history.push(
                 //     {
@@ -89,6 +111,7 @@ function Dashboard(props) {
             }
         })
     }
+   
 
  return (
         <>
@@ -102,6 +125,7 @@ function Dashboard(props) {
                 <ol>
                     <li><a >Home</a></li>
                     <li>User profile</li>
+                    <li><button className='btn btn-info' href="#" onClick={logout}>LOGOUT</button></li>
                 </ol>
                 </div>
             </div>
@@ -118,7 +142,7 @@ function Dashboard(props) {
           <div className="col-md-6 offset-md-3">
             <div className="icon-box" data-aos="zoom-in-left">
                  <div>
-                     {/* <span>111 {userData.user_firstname}</span> */}
+                    
           {stringify.map(userinfo => { 
               return (
                 <div className="testimonial-item" key={userinfo.user_id.toString()} >

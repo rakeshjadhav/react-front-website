@@ -43,9 +43,11 @@ let login_style = '';
 //         display: "block"
 //   }
 // }
+// const userData = localStorage.getItem('userinfo');
+//    const stringify = JSON.parse(userData);
 useEffect(() => {
-    if(localStorage.getItem('user-info')) {
-        history.push("/user")
+    if(localStorage.getItem('userinfo')) {
+        history.push("/Dashboard")
     }
 })
 const register  = () => {

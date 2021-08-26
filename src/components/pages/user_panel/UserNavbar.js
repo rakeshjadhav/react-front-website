@@ -16,7 +16,7 @@ const UserNavbar = () => {
 
       <nav className="nav-menu d-none d-lg-block">
         <ul>
-          <li><NavLink exact to="/" >Home</NavLink></li>
+          {/* <li><NavLink exact to="/" >Home</NavLink></li> */}
         </ul>
       </nav>
     </div>

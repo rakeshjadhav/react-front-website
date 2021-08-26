@@ -1,7 +1,7 @@
 
 import React  from "react";
 // import {Component } from 'react';
-// import { Link,NavLink } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 class Slider extends React.Component {
 
@@ -16,7 +16,9 @@ class Slider extends React.Component {
                     <p className="animate__animated fanimate__adeInUp">
                         Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.
                     </p>
-                    <a href="#about" className="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+
+                    <NavLink className="btn-get-started animate__animated animate__fadeInUp scrollto" exact to="/User">User Panel</NavLink>
+                    
                     </div>
                 </div>
 
