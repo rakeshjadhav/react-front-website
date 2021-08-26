@@ -1,52 +1,44 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route , Switch,Redirect,useHistory,useLocation } from "react-router-dom";
-// import Axios from 'axios';
 import '../../../User.css';
 import UserNavbar from "./UserNavbar";
 import authHeader from './AuthHeader';
 
 
-function Dashboard(props) {
+function Dashboard() {
 
-  const location = useLocation();
   const history = useHistory();
-   const userData = localStorage.getItem('userinfo');
-   const stringify = JSON.parse(userData);
-//    console.log(userData);
   
-   if (userData === null) {
-       history.push("/User");
+  const userData = localStorage.getItem('userinfo');
+  const stringify = JSON.parse(userData);
+ 
+   if(localStorage.getItem("userinfo") === null) {
+      <Redirect to="/User" />
   }
+  const location = useLocation();
+
     useEffect(() => {
-        
-        if(!localStorage.getItem('userinfo')) {
-            history.push("/User")
-        }
-        
-        // viewProfile();
+
     })
     let [responseData, setResponseData] = useState([]);
     const [regsisStatus,setregisStatus] = useState([]);
-
+    //  from post
     const [user_firstnameReg, setUser_firstname] = useState('');
     const [user_lastnameReg, setUser_lastname] = useState('');
     const [user_emailReg, setUser_email] = useState('');
-    const [usernameReg, setUsername] = useState('');
-    const [passwordReg, setPassword] = useState('');
     const [genderReg, setGender] = useState('');
 
-    // const [loggedOut, setLoggedOut] = useState(false)
-    // alert(user_firstnameReg);
-//    const logout = () => {
-//        window.localStorage.clear();
-//     //  history.push("/User")
-//     }
+    // error
+    const [errsetf_name,setf_name] = useState("");
+    const [errsetl_name,setl_name] = useState("");
+    const [errsete_name,sete_name] = useState("");
+    const [errsetg_name,setg_name] = useState("");
+
     const logout = () => {
         alert("Are You Sure You Want To Log Out ??");
         window.localStorage.clear();
         history.push("/User")
-    
       };
    
     const viewProfile  = user_id => () => {
@@ -60,11 +52,10 @@ function Dashboard(props) {
       }).then((response) => {
           if(response.data.error ? true : false){
             setResponseData(response.data);
-            console.log(response.data.data[0].user_firstname);
+            // console.log(response.data.data[0].user_firstname);
             setUser_firstname(response.data.data[0].user_firstname);
             setUser_lastname(response.data.data[0].user_lastname);
             setUser_email(response.data.data[0].user_email);
-            // setPassword(response.data.data[0].password);
             setGender(response.data.data[0].gender);
           }else{
             setResponseData(""); 
@@ -88,26 +79,23 @@ function Dashboard(props) {
         }).then((response) => {
             if(response.data.error ? true : false){
                 setregisStatus(response.data.message);
-                // window.localStorage.removeItem("userinfo");
-                // const userData = localStorage.setItem('userinfo',JSON.stringify(response.data.data))
-                // const stringify = JSON.parse(userData);
+                console.log("hiii");
+                console.log(response.data);
+                 window.localStorage.removeItem("userinfo");
+                localStorage.setItem('userinfo',JSON.stringify(response.data.data))
+             //   const stringify = JSON.parse(userData);
+                // console.log(stringify);
                 window.location.reload(false);
-
-                // history.push(
-                //     {
-                //         pathname: '/Dashboard',
-                //         user: response.data,
-                      
-                //     });
             }else{
                
                 const f_name = <p>{response.data.data.errors.user_firstname}</p>;
                 const l_name = <p>{response.data.data.errors.user_lastname}</p>;
                 const err_email = <p>{response.data.data.errors.user_email}</p>;
-                const err_uname = <p>{response.data.data.errors.username}</p>;
-                const err_upass = <p>{response.data.data.errors.password}</p>;
-    
-                setregisStatus([f_name,l_name,err_email,err_uname,err_upass]); 
+                const err_gender = <p>{response.data.data.errors.gender}</p>;
+                setf_name(f_name);
+                setl_name(l_name);
+                sete_name(err_email);
+                setg_name(err_gender);
             }
         })
     }
@@ -130,44 +118,34 @@ function Dashboard(props) {
                 </div>
             </div>
             </section>
-            <section id="testimonials" className="testimonials">
-      <div className="container">
-
-        <div className="section-title" data-aos="zoom-out">
-          <h2>User Profile</h2>
-          
-        </div>
-
+            <div id="" className="testimonials" >
+      <div className="">
         <div className="row">
-          <div className="col-md-6 offset-md-3">
-            <div className="icon-box" data-aos="zoom-in-left">
+          <div className="col-md-6 offset-md-3" >
+            <div className="icon-box" data-aos="zoom-in-left"  >
                  <div>
-                    
-          {stringify.map(userinfo => { 
-              return (
-                <div className="testimonial-item" key={userinfo.user_id.toString()} >
-                <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt="" />
-                <h3>{userinfo.user_firstname} {userinfo.user_lastname} </h3>
-                <h3>Email ID : {userinfo.user_email}</h3>
-                <h3>Username : {userinfo.username}</h3>
-                <h3>Password : ********</h3>
-                <button  type="button" className="btn btn-primary" data-toggle="modal" data-target="#updateUserinfo" onClick={viewProfile(userinfo.user_id)} >Update Profile</button>
-              </div>
-              )
-          })}
-      </div>  
-   
+                    {stringify.map(userinfo => { 
+                        return (
+                            <div className="testimonial-item" key={userinfo.user_id.toString()} style={{borderTop:"2px solid #000"}} >
+                            <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt="" />
+                            <h3>{userinfo.user_firstname} {userinfo.user_lastname} </h3>
+                            <h3>Email ID : {userinfo.user_email}</h3>
+                            <h3>Username : {userinfo.username}</h3>
+                            <h3>Password : ********</h3>
+                            <button  type="button" className="btn btn-primary" data-toggle="modal" data-target="#updateUserinfo" onClick={viewProfile(userinfo.user_id)} >Update Profile</button>
+                        </div>
+                        )
+                    })}
+                </div>  
             </div>
           </div>
-
           </div>
-
       </div>
-    </section>
+    </div>
 
-            </main>
-
-            <div className="modal fade" id="updateUserinfo" tabIndex="-1" role="dialog" aria-labelledby="updateUserinfoTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+</main>
+{/* User Info Update */}
+     <div className="modal fade" id="updateUserinfo" tabIndex="-1" role="dialog" aria-labelledby="updateUserinfoTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                     <div className="modal-header">
@@ -178,7 +156,7 @@ function Dashboard(props) {
                     </div>
                     <div className="modal-body">
                     <div className="row">
-                    <span style={{color:"red"}}>{regsisStatus}</span>  
+                    {/* <span style={{color:"red"}}>{regsisStatus}</span>   */}
                         <article className="card-body">
                         
                          {responseData.data ? (
@@ -188,16 +166,17 @@ function Dashboard(props) {
                                  <div className="form-row">
                                 <div className="col form-group">
                                     <label>First name </label>   
-                                    <input type="text"   defaultValue={userinfos.user_firstname} onChange={(e) => {
+                                    <input type="text" className="form-control"  defaultValue={userinfos.user_firstname} onChange={(e) => {
                                         setUser_firstname(e.target.value);
                                     }} />
-                                    
+                                     <span className="text-danger">{errsetf_name}</span> 
                                 </div> 
                                 <div className="col form-group">
                                     <label>Last name</label> 
-                                    <input type="text"  defaultValue={userinfos.user_lastname}  onChange={(e) => {
+                                    <input type="text" className="form-control" defaultValue={userinfos.user_lastname}  onChange={(e) => {
                                         setUser_lastname(e.target.value);
                                     }}/>
+                                    <span className="text-danger">{errsetl_name}</span> 
                                 </div> 
                             </div> 
                             <div className="form-group">
@@ -205,18 +184,17 @@ function Dashboard(props) {
                                 <input type="email" className="form-control" placeholder="" defaultValue={userinfos.user_email} onChange={(e) => {
                                         setUser_email(e.target.value);
                                     }} />
+                                     <span className="text-danger">{errsete_name}</span> 
                                 <small className="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div> 
                             <div className="form-row">
                                 <div className="col form-group">
                                     <label>Username </label>   
-                                    <input type="text" className="form-control" placeholder="" defaultValue={userinfos.user_firstname} readOnly />
+                                    <input type="text" className="form-control" placeholder="" defaultValue={userinfos.username} readOnly />
                                 </div> 
                                 <div className="col form-group">
                                     <label>Password</label> 
-                                    <input type="password" className="form-control" placeholder=" "  defaultValue={userinfos.password} onChange={(e) => {
-                                        setPassword(e.target.value);
-                                    }} readOnly />
+                                    <input type="password" className="form-control" placeholder=" "  defaultValue={userinfos.password}  readOnly />
                                 </div> 
                             </div> 
                             <div className="form-group">
@@ -231,6 +209,7 @@ function Dashboard(props) {
                                         setGender(e.target.value); }} />
                                 <span className="form-check-label"> Female</span>
                                 </label>
+                                <span className="text-danger">{errsetg_name}</span> 
                             </div> 
 
 

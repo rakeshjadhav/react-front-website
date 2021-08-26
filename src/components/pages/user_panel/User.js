@@ -2,10 +2,18 @@ import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import { BrowserRouter as Router, Route , Switch,Redirect,useHistory,useLocation } from "react-router-dom";
 // import Axios from 'axios';
+import "../../../User.css";
 import UserNavbar from "./UserNavbar";
 
 
 function User() {
+
+const history = useHistory();
+
+//    if(localStorage.getItem("userinfo") === null) {
+//       history.push({pathname: '/Dashboard' });
+//     }
+
 const location = useLocation();
 
 const [user_firstnameReg, setUser_firstname] = useState('');
@@ -30,21 +38,14 @@ const [usernameLog, setUsernameLog] = useState('');
 const [passwordLog, setPasswordLog] = useState('');
 
 
-const history = useHistory();
+
 const [isOpen, setIsOpen] = useState(false);
 const bcrypt = require('bcryptjs')
 
 let login_model = ' modal fade'; 
 let login_style = '';
 
-// if (location.state.modelview) {
-//     login_model += ' show';
-//     login_style = {
-//         display: "block"
-//   }
-// }
-// const userData = localStorage.getItem('userinfo');
-//    const stringify = JSON.parse(userData);
+
 useEffect(() => {
     if(localStorage.getItem('userinfo')) {
         history.push("/Dashboard")
@@ -63,7 +64,7 @@ const register  = () => {
         user_lastname : user_lastnameReg,
         user_email : user_emailReg,
         username : usernameReg,
-        password : passwordReg, //bcrypt.hashSync(passwordReg, bcrypt.genSaltSync()),
+        password : passwordReg,
         gender : genderReg,
     }).then((response) => {
         if(response.data.error ? true : false){
@@ -119,11 +120,6 @@ const login  = () => {
        
     })
 }
-
-// if (setLoading) {
-//     console.log(setLoading);
-//     return <p>Loading...</p>;
-//   }
  return (
         <>
         
@@ -140,8 +136,8 @@ const login  = () => {
             </section>
 
             <section className="inner-page">
-            <div className="container" >
-                <div className="row DivCenter" style={{boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"}}>
+            <div className="container" > 
+                <div className="row DivCenter" style={{boxShadow: "1px 3px 20px 12px rgba(0,0,0,0.2)"}}>
                    <div className="col-6 col-md-4">
                       <a className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterlogin" >Login</a>
                    </div>
