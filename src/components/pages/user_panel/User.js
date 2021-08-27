@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
-import { BrowserRouter as Router, Route , Switch,Redirect,useHistory,useLocation } from "react-router-dom";
+import { BrowserRouter as Router, useHistory,useLocation } from "react-router-dom";
 // import Axios from 'axios';
 import "../../../User.css";
 import UserNavbar from "./UserNavbar";
@@ -33,18 +33,12 @@ const [errsetg_name,setg_name] = useState("");
 const [regsisStatus,setregisStatus] = useState([]);
 const [loginStatus,setLogstatus] = useState("");
 
-
 const [usernameLog, setUsernameLog] = useState('');
 const [passwordLog, setPasswordLog] = useState('');
 
-
-
-const [isOpen, setIsOpen] = useState(false);
 const bcrypt = require('bcryptjs')
 
 let login_model = ' modal fade'; 
-let login_style = '';
-
 
 useEffect(() => {
     if(localStorage.getItem('userinfo')) {
@@ -112,17 +106,14 @@ const login  = () => {
                 {
                     pathname: '/Dashboard',
                     state: response.data,
-                  
                 });
         }else{
             setLogstatus(response.data.message);
         }
-       
     })
 }
  return (
         <>
-        
         <UserNavbar/>
            <main id="main">
             <section className="breadcrumbs">
@@ -130,7 +121,10 @@ const login  = () => {
 
                 <div className="d-flex justify-content-between align-items-center">
                 <h2>User Panel</h2>
-                
+                <ol>
+                    <li><a href="/" >Home</a></li>
+                    <li>User Login Panel</li>
+                </ol>
                 </div>
             </div>
             </section>
@@ -141,10 +135,8 @@ const login  = () => {
                    <div className="col-6 col-md-4">
                       <a className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterlogin" >Login</a>
                    </div>
-                   
                    <div className="col-6 col-md-4">
                       <a type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" >Register</a>
-                   
                    </div>
                 </div>
             </div>
@@ -217,8 +209,6 @@ const login  = () => {
                                 </label>
                                 <span className="text-danger">{errsetg_name}</span> 
                             </div> 
-                                                                   
-                       
                         </article> 
                         </div>            
                     </div>
@@ -229,10 +219,8 @@ const login  = () => {
                     </div>
                 </div>
                 </div>
-
-
-
-                <div className={login_model} id="exampleModalCenterlogin" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false"  >
+        {/* //user login model */}
+             <div className={login_model} id="exampleModalCenterlogin" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false"  >
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                     <div className="modal-header">
@@ -251,14 +239,12 @@ const login  = () => {
                                 <input type="email" className="form-control" placeholder="Enter Username"  onChange={(e) => {
                                         setUsernameLog(e.target.value);
                                     }} />
-                               
                             </div> 
                             <div className="form-group">
                                 <label>Password <span className="text-danger">*</span></label>
                                 <input type="password" className="form-control" placeholder="Enter Password"  onChange={(e) => {
                                         setPasswordLog(e.target.value);
                                     }} />
-                                
                             </div> 
                         </article> 
                         </div>            
@@ -266,21 +252,14 @@ const login  = () => {
                     <div className="modal-footer">
                         <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
                         <button type="button" className="btn btn-primary" onClick={login}>Login</button>
-                      
-                   
                     </div>
                     </div>
                 </div>
                 </div>
              </main>
            </>
-        
     );
-
-
-
 }
-
 
  export default User;
   
