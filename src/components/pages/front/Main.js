@@ -1,4 +1,4 @@
-import React, { Component }  from "react";
+import React from "react";
 
 class Main extends React.Component {
 
@@ -33,7 +33,7 @@ class Main extends React.Component {
                             velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                             culpa qui officia deserunt mollit anim id est laborum.
                             </p>
-                            <a href="#" className="btn-learn-more">Learn More</a>
+                            <a href="/" className="btn-learn-more">Learn More</a>
                         </div>
                         </div>
 
@@ -181,7 +181,7 @@ class Main extends React.Component {
         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div className="col-lg-3 cta-btn-container text-center">
-        <a className="cta-btn align-middle" href="#">Call To Action</a>
+        <a className="cta-btn align-middle" href="/">Call To Action</a>
       </div>
     </div>
 
@@ -201,14 +201,14 @@ class Main extends React.Component {
       <div className="col-lg-4 col-md-6">
         <div className="icon-box" data-aos="zoom-in-left">
           <div className="icon"><i className="las la-basketball-ball" ></i></div>
-          <h4 className="title"><a href="">Lorem Ipsum</a></h4>
+          <h4 className="title"><a href="/">Lorem Ipsum</a></h4>
           <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
         </div>
       </div>
       <div className="col-lg-4 col-md-6 mt-5 mt-md-0">
         <div className="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
           <div className="icon"><i className="las la-book" ></i></div>
-          <h4 className="title"><a href="">Dolor Sitema</a></h4>
+          <h4 className="title"><a href="/">Dolor Sitema</a></h4>
           <p className="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
         </div>
       </div>
@@ -216,14 +216,14 @@ class Main extends React.Component {
       <div className="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
         <div className="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
           <div className="icon"><i className="las la-file-alt" ></i></div>
-          <h4 className="title"><a href="">Sed ut perspiciatis</a></h4>
+          <h4 className="title"><a href="/">Sed ut perspiciatis</a></h4>
           <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
         </div>
       </div>
       <div className="col-lg-4 col-md-6 mt-5">
         <div className="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
           <div className="icon"><i className="las la-tachometer-alt" ></i></div>
-          <h4 className="title"><a href="">Magni Dolores</a></h4>
+          <h4 className="title"><a href="/">Magni Dolores</a></h4>
           <p className="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
         </div>
       </div>
@@ -231,14 +231,14 @@ class Main extends React.Component {
       <div className="col-lg-4 col-md-6 mt-5">
         <div className="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
           <div className="icon"><i className="las la-globe-americas" ></i></div>
-          <h4 className="title"><a href="">Nemo Enim</a></h4>
+          <h4 className="title"><a href="/">Nemo Enim</a></h4>
           <p className="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
         </div>
       </div>
       <div className="col-lg-4 col-md-6 mt-5">
         <div className="icon-box" data-aos="zoom-in-left" data-aos-delay="500">
           <div className="icon"><i className="las la-clock" ></i></div>
-          <h4 className="title"><a href="">Eiusmod Tempor</a></h4>
+          <h4 className="title"><a href="/">Eiusmod Tempor</a></h4>
           <p className="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
         </div>
       </div>
@@ -451,7 +451,7 @@ class Main extends React.Component {
             <li className="na">Massa ultricies mi</li>
           </ul>
           <div className="btn-wrap">
-            <a href="#" className="btn-buy">Buy Now</a>
+            <a href="/" className="btn-buy">Buy Now</a>
           </div>
         </div>
       </div>
@@ -468,7 +468,7 @@ class Main extends React.Component {
             <li className="na">Massa ultricies mi</li>
           </ul>
           <div className="btn-wrap">
-            <a href="#" className="btn-buy">Buy Now</a>
+            <a href="/" className="btn-buy">Buy Now</a>
           </div>
         </div>
       </div>
@@ -485,7 +485,7 @@ class Main extends React.Component {
             <li>Massa ultricies mi</li>
           </ul>
           <div className="btn-wrap">
-            <a href="#" className="btn-buy">Buy Now</a>
+            <a href="/" className="btn-buy">Buy Now</a>
           </div>
         </div>
       </div>
@@ -503,7 +503,7 @@ class Main extends React.Component {
             <li>Massa ultricies mi</li>
           </ul>
           <div className="btn-wrap">
-            <a href="#" className="btn-buy">Buy Now</a>
+            <a href="/" className="btn-buy">Buy Now</a>
           </div>
         </div>
       </div>
@@ -597,10 +597,10 @@ class Main extends React.Component {
           <div className="member-img">
             <img src="assets/img/team/team-1.jpg" className="img-fluid" alt="" />
             <div className="social">
-              <a href=""><i className="icofont-twitter"></i></a>
-              <a href=""><i className="icofont-facebook"></i></a>
-              <a href=""><i className="icofont-instagram"></i></a>
-              <a href=""><i className="icofont-linkedin"></i></a>
+              <a href="/"><i className="icofont-twitter"></i></a>
+              <a href="/"><i className="icofont-facebook"></i></a>
+              <a href="/"><i className="icofont-instagram"></i></a>
+              <a href="/"><i className="icofont-linkedin"></i></a>
             </div>
           </div>
           <div className="member-info">
@@ -615,10 +615,10 @@ class Main extends React.Component {
           <div className="member-img">
             <img src="assets/img/team/team-2.jpg" className="img-fluid" alt="" />
             <div className="social">
-              <a href=""><i className="icofont-twitter"></i></a>
-              <a href=""><i className="icofont-facebook"></i></a>
-              <a href=""><i className="icofont-instagram"></i></a>
-              <a href=""><i className="icofont-linkedin"></i></a>
+              <a href="/"><i className="icofont-twitter"></i></a>
+              <a href="/"><i className="icofont-facebook"></i></a>
+              <a href="/"><i className="icofont-instagram"></i></a>
+              <a href="/"><i className="icofont-linkedin"></i></a>
             </div>
           </div>
           <div className="member-info">
@@ -633,10 +633,10 @@ class Main extends React.Component {
           <div className="member-img">
             <img src="assets/img/team/team-3.jpg" className="img-fluid" alt="" />
             <div className="social">
-              <a href=""><i className="icofont-twitter"></i></a>
-              <a href=""><i className="icofont-facebook"></i></a>
-              <a href=""><i className="icofont-instagram"></i></a>
-              <a href=""><i className="icofont-linkedin"></i></a>
+              <a href="/"><i className="icofont-twitter"></i></a>
+              <a href="/"><i className="icofont-facebook"></i></a>
+              <a href="/"><i className="icofont-instagram"></i></a>
+              <a href="/"><i className="icofont-linkedin"></i></a>
             </div>
           </div>
           <div className="member-info">
@@ -651,10 +651,10 @@ class Main extends React.Component {
           <div className="member-img">
             <img src="assets/img/team/team-4.jpg" className="img-fluid" alt="" />
             <div className="social">
-              <a href=""><i className="icofont-twitter"></i></a>
-              <a href=""><i className="icofont-facebook"></i></a>
-              <a href=""><i className="icofont-instagram"></i></a>
-              <a href=""><i className="icofont-linkedin"></i></a>
+              <a href="/"><i className="icofont-twitter"></i></a>
+              <a href="/"><i className="icofont-facebook"></i></a>
+              <a href="/"><i className="icofont-instagram"></i></a>
+              <a href="/"><i className="icofont-linkedin"></i></a>
             </div>
           </div>
           <div className="member-info">

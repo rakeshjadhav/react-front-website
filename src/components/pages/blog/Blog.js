@@ -13,9 +13,9 @@ import '../../../assets/vendor/owl.carousel/assets/owl.carousel.min.css';
 import '../../../assets/vendor/aos/aos.css';
 import '../../../assets/css/style.css';
 
-import {Helmet} from "react-helmet";
-import $ from 'jquery';
-import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
+// import {Helmet} from "react-helmet";
+// import $ from 'jquery';
+// import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
 
 import Blogs from './Blogs';
 // import Main from './Main';
@@ -44,7 +44,7 @@ class Blog extends Component {
     <div className="d-flex justify-content-between align-items-center">
       <h2>Blogs Details</h2>
       <ol>
-        <li><a href="">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li>Blogs Details</li>
       </ol>
     </div>

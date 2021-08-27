@@ -1,7 +1,7 @@
 
 import React  from "react";
 // import {Component } from 'react';
-import { Link,NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Slider extends React.Component {
 
@@ -12,7 +12,7 @@ class Slider extends React.Component {
                 <div id="heroCarousel" className="container carousel carousel-fade" data-ride="carousel">
                 <div className="carousel-item active">
                     <div className="carousel-container">
-                    <h2 className="animate__animated animate__fadeInDown">Welcome to <span>Selecao</span></h2>
+                    <h2 className="animate__animated animate__fadeInDown">Welcome to <span>Synergy Technology Services</span></h2>
                     <p className="animate__animated fanimate__adeInUp">
                         Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.
                     </p>

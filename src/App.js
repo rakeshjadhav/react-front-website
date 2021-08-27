@@ -26,7 +26,7 @@ import State_in_component from './components/pages/State_in_component';
 import Component_life_cycle from './components/pages/Component_life_cycle';
 
 import Blog from './components/pages/blog/Blog';
-import Blogs from './components/pages/blog/Blogs';
+// import Blogs from './components/pages/blog/Blogs';
 import Blogdeatils from './components/pages/blog/Blogdeatils'
 
 import Creation_of_functional_component from './components/pages/functional_component/Creation_of_functional_component';
@@ -50,8 +50,8 @@ import User from './components/pages/user_panel/User';
 import Dashboard from './components/pages/user_panel/Dashboard';
 import Sucess from './components/pages/user_panel/Sucess';
 
-import {Helmet} from "react-helmet";
-import $ from 'jquery';
+// import {Helmet} from "react-helmet";
+// import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
 
 

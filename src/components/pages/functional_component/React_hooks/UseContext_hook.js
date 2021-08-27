@@ -1,9 +1,7 @@
-import React,{useState, useCallback} from "react";
+import React,{useState} from "react";
 import { NavLink } from "react-router-dom";
 import CreateContext from '../React_hooks/CreateContext';
 import Contextbutton from "./Contextbutton";
-
-var funccount = new Set();
 
 function UseContext_hook() {
 

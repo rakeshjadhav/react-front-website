@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Navbar from '../front/Navbar';
-import { Link,NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const url = " http://localhost:8900/blog";
 
  class Blogdeatils extends Component {
@@ -31,8 +31,8 @@ const url = " http://localhost:8900/blog";
     <div className="d-flex justify-content-between align-items-center">
       <h2>Blogs Details</h2>
       <ol>
-        <li><a href="">Home</a></li>
-        <li><a >Blogs</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/" >Blogs</a></li>
       </ol>
     </div>
 
