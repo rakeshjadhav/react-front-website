@@ -50,6 +50,8 @@ import User from './components/pages/user_panel/User';
 import Dashboard from './components/pages/user_panel/Dashboard';
 import Sucess from './components/pages/user_panel/Sucess';
 
+import Index from './components/pages/react_redux/Index';
+
 // import {Helmet} from "react-helmet";
 // import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -88,6 +90,8 @@ function App() {
            <Route exact path ="/User" component={User} />
            <Route exact path ="/Dashboard" component={Dashboard} />
            <Route exact path ="/Sucess" component={Sucess} />
+
+           <Route exact path ="/Index" component={Index} />
        </Switch> 
      
     </div>
