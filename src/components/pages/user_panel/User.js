@@ -61,6 +61,7 @@ const register  = () => {
         password : passwordReg,
         gender : genderReg,
     }).then((response) => {
+        console.log(response.data)
         if(response.data.error ? true : false){
             setregisStatus(response.data.message);
             history.push(
