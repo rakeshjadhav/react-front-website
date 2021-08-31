@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   
     return (
-<header id="header" className="fixed-top d-flex align-items-center  header-transparent hidennavbar ">
+<header id="header" className="fixed-top d-flex align-items-center hidennavbar ">
     <div className="container d-flex align-items-center ">
 
       <div className="logo mr-auto">

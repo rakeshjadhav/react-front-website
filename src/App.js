@@ -51,6 +51,8 @@ import Dashboard from './components/pages/user_panel/Dashboard';
 import Sucess from './components/pages/user_panel/Sucess';
 
 import Index from './components/pages/react_redux/Index';
+import AddPost from './components/pages/react_redux/pages/AddContact';
+import EditContact from "./components/pages/react_redux/pages/EditContact";
 
 // import {Helmet} from "react-helmet";
 // import $ from 'jquery';
@@ -92,6 +94,8 @@ function App() {
            <Route exact path ="/Sucess" component={Sucess} />
 
            <Route exact path ="/Index" component={Index} />
+           <Route exact path="/add" component={() => <AddPost />} />
+           <Route exact path="/edit/:id" component={() => <EditContact />} />
        </Switch> 
      
     </div>
