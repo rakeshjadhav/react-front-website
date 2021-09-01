@@ -56,6 +56,8 @@ import EditContact from "./components/pages/react_redux/pages/EditContact";
 
 import Home_products from './components/pages/react_redux/Home_products';
 
+import LoginIndex from './components/pages/react_redux_user_panel/Index';
+
 // import {Helmet} from "react-helmet";
 // import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -100,6 +102,8 @@ function App() {
            <Route exact path="/edit/:id" component={() => <EditContact />} />
 
            <Route exact path ="/Home_products" component={Home_products} />
+           <Route exact path ="/LoginIndex" component={LoginIndex} />
+           
        </Switch> 
      
     </div>

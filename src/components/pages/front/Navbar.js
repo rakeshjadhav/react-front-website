@@ -14,7 +14,7 @@ const Navbar = () => {
       <nav className="nav-menu d-none d-lg-block">
         <ul>
           <li><NavLink exact to="/" >Home</NavLink></li>
-          <li><NavLink exact to="/product">Class Component</NavLink></li>
+          {/* <li><NavLink exact to="/product">Class Component</NavLink></li>
           <li><NavLink exact to="/multiple_comp_in_single_comp">Multi comp in sing comp</NavLink></li>
           <li><NavLink exact to="/props">Props</NavLink></li>
           <li><NavLink exact to="/state_in_component">State in class Component</NavLink></li>
@@ -27,7 +27,9 @@ const Navbar = () => {
           <li><NavLink exact to="/User">User Panel</NavLink></li>
 
           <li><NavLink exact to="/Index">React Redux</NavLink></li>
-          <li><NavLink exact to="/Home_products">Redux Thunk</NavLink></li>
+          <li><NavLink exact to="/Home_products">Redux Thunk pro</NavLink></li> */}
+
+          <li><NavLink exact to="/LoginIndex">Redux User Panel</NavLink></li>
           
         </ul>
       </nav>
