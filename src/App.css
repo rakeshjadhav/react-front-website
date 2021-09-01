@@ -1,7 +1,10 @@
 .h1{
     text-align: center;
 }
-
+a {
+    color: #0d6efd;
+    text-decoration: none !important;
+}
 .divPadding{
     margin: 0;
     background: yellow;

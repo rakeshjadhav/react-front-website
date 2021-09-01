@@ -1,14 +1,30 @@
 import React from "react";
 import "../../../App.css"
+
+import { Link,NavLink } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
-import {incNumber,decNumber} from "../react_redux/actions/index"
+import {incNumber,decNumber} from "../react_redux/actions/index";
+import { toast } from "react-toastify";
+
 
 const Index = () => {
     const myState = useSelector((state) => state.changeTheNumber);
+    const contacts = useSelector((state) => state.contactReducer);
     const dispatch = useDispatch();
 
+    const deleteContact = (id)=> {
+      dispatch({type : 'DELETE_CONTACT' ,payload:id});
+      toast.success("Contact deleted successfully!!");
+
+    }
+
+//text right
+const TextAlignRight = {
+  float : 'right'
+}
     return(
         <>
+       
         <section id="about" className="about">
             <div className="container">
                 <div className="section-title" data-aos="zoom-out">
@@ -50,9 +66,7 @@ const Index = () => {
                       </ul>
                       
                       <div className="card">
-                           <h3>Increment / Decerment Counter </h3>  
-                          
-
+                           <h4>Increment / Decerment Counter </h4>  
                            <div className="text-center">
                                 <div className="qty mt-5">
                                 <span className="minus bg-dark" title="Increment" onClick ={() => dispatch(decNumber()) }>-</span>
@@ -65,6 +79,62 @@ const Index = () => {
                 </div>
            </div>
         </section> 
+
+      <div className="row">
+        {/* <div className="row">
+            <div className="col-md-8"></div>
+            <div className="col-md-4">
+              <Link to="/add" className="btn btn-outline-dark my-5 ml-auto ">Add Contact</Link>
+            </div>
+        </div> */}
+        
+        <div className="col-md-10 mx-auto my-4">
+         <h2>Contact Lists  
+           <span style={TextAlignRight}><Link to="/add" className="btn btn-outline-dark ml-auto ">Add Contact</Link></span></h2>
+        <table className="table table-hover">
+            <thead className="table-header bg-dark text-white">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {contacts.length > 0 ? (
+                contacts.map((contact, id) => (
+                  <tr key={id}>
+                    <td>{id + 1}</td>
+                    <td>{contact.name}</td>
+                    <td>{contact.email}</td>
+                    <td>{contact.phone}</td>
+                    <td>
+                      <Link
+                        to={`/edit/${contact.id}`}
+                        className="btn btn-sm btn-primary mr-1"
+                      >
+                        Edit
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => deleteContact(contact.id)}
+                        className="btn btn-sm btn-danger"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <th>No contacts found</th>
+                </tr>
+              )}
+            </tbody>
+          </table>
+          </div>
+      </div>
         </>
     )
 }

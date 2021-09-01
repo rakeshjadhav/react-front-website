@@ -1,5 +1,5 @@
 
-const initialSatate = 0;
+const initialSatate = 121;
 const changeTheNumber = (state = initialSatate, action) => {
 
     switch (action.type){
