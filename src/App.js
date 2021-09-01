@@ -54,6 +54,8 @@ import Index from './components/pages/react_redux/Index';
 import AddPost from './components/pages/react_redux/pages/AddContact';
 import EditContact from "./components/pages/react_redux/pages/EditContact";
 
+import Home_products from './components/pages/react_redux/Home_products';
+
 // import {Helmet} from "react-helmet";
 // import $ from 'jquery';
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
@@ -96,6 +98,8 @@ function App() {
            <Route exact path ="/Index" component={Index} />
            <Route exact path="/add" component={() => <AddPost />} />
            <Route exact path="/edit/:id" component={() => <EditContact />} />
+
+           <Route exact path ="/Home_products" component={Home_products} />
        </Switch> 
      
     </div>

@@ -27,6 +27,7 @@ const Navbar = () => {
           <li><NavLink exact to="/User">User Panel</NavLink></li>
 
           <li><NavLink exact to="/Index">React Redux</NavLink></li>
+          <li><NavLink exact to="/Home_products">Redux Thunk</NavLink></li>
           
         </ul>
       </nav>
