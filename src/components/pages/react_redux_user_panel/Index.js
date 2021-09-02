@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Login from './Login'
 import Register from './Register'
 import Navbar from './Navbar'
+import { Link, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { userActions } from './actions'; //
 
 function Index() {
+
+    const dispatch = useDispatch();
+    useEffect(() => { 
+        dispatch(userActions.logout()); 
+    }, []);
+
+
     return (
         <>
         <main id="main">

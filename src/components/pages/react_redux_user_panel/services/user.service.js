@@ -3,37 +3,38 @@ import { BrowserRouter as Router, useHistory,useLocation } from "react-router-do
 import axios from 'axios';
 
 export const userService = {
-    // login,
-    // logout,
+    login,
+    logout,
     register,
+    userupdate: _userupdate,
     // getAll,
     // getById,
     // update,
     // delete: _delete
 };
 
-// function login(username, password) {
-//     const requestOptions = {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ username, password })
-//     };
+function login(username, password) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+    };
 
-//     return fetch(`/users/authenticate`, requestOptions)
-//         .then(handleResponse)
-//         .then(user => {
-//             // store user details and jwt token in local storage to keep user logged in between page refreshes
-//             localStorage.setItem('user', JSON.stringify(user));
+    return fetch(`http://localhost:5000/api/users/authenticate`, requestOptions)
+        .then(handleResponse)
+        .then(user => {
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('user', JSON.stringify(user));
 
-//             return user;
-//         });
-// }
+            return user;
+        });
+}
 
-// function logout() {
-//     const location = useLocation();
-//     // remove user from local storage to log user out
-//     localStorage.removeItem('user');
-// }
+function logout() {
+    
+    // remove user from local storage to log user out
+    localStorage.removeItem('user');
+}
 
 // function getAll() {
 //     const requestOptions = {
@@ -61,8 +62,19 @@ function register(user) {
     };
 
     // return axios.post("http://localhost:5000/api/users/register",requestOptions ).then(handleResponse);
-
     return fetch(`http://localhost:5000/api/users/register`, requestOptions).then(handleResponse);
+}
+
+
+function _userupdate(id,user) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user)
+    };
+
+    // return axios.post("http://localhost:5000/api/users/register",requestOptions ).then(handleResponse);
+    return fetch(`http://localhost:5000/api/users/userupdate/${id}`, requestOptions).then(handleResponse);
 }
 
 // function update(user) {
