@@ -1,4 +1,4 @@
-import React  from 'react';
+import React,{useEffect}  from 'react';
 import './App.css';
 // import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
@@ -56,16 +56,38 @@ import EditContact from "./components/pages/react_redux/pages/EditContact";
 
 import Home_products from './components/pages/react_redux/Home_products';
 
+import LoginIndex from './components/pages/react_redux_user_panel/Index';
+import Homepage from './components/pages/react_redux_user_panel/Homepage';
+import Registersucces from './components/pages/react_redux_user_panel/Register.succes';
+
+
 // import {Helmet} from "react-helmet";
 // import $ from 'jquery';
-import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route , Switch,Redirect } from "react-router-dom";
 
+import history from './components/pages/react_redux_user_panel/helpers/history';
+import { alertActions } from './components/pages/react_redux_user_panel/actions';
 
+// import PrivateRoute  from './components/pages/react_redux_user_panel/components/PrivateRoute';
+
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
+
+  const alert = useSelector(state => state.alert);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      history.listen((location, action) => {
+        console.log(history);
+          // clear alert on location change
+          //dispatch(alertActions.clear());
+      });
+  }, []);
+
   return (
     <>
-    <Router>
+    <Router history={ history }>
     <div className="">
        <Navbar />
       
@@ -100,6 +122,11 @@ function App() {
            <Route exact path="/edit/:id" component={() => <EditContact />} />
 
            <Route exact path ="/Home_products" component={Home_products} />
+           <Route exact path ="/LoginIndex" component={LoginIndex} />
+           <Route exact path="/Homepage" component={Homepage} />
+           <Route exact path="/Registersucces" component={Registersucces} />
+           <Redirect from="*" to="/" />
+            
        </Switch> 
      
     </div>
