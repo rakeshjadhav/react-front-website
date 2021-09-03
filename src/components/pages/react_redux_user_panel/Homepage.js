@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from './actions';
 import '../../../User.css';
 import UserUpdate from './Userupdate';
+import history from '../react_redux_user_panel/helpers/history';
 
 function Homepage() {
     const user = useSelector(state => state.authentication.user);

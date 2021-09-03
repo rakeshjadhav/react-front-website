@@ -1,4 +1,5 @@
 import React,{useEffect}  from 'react';
+import { Router, Route , Switch,Redirect } from "react-router-dom";
 import './App.css';
 // import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
@@ -63,31 +64,35 @@ import Registersucces from './components/pages/react_redux_user_panel/Register.s
 
 // import {Helmet} from "react-helmet";
 // import $ from 'jquery';
-import { BrowserRouter as Router, Route , Switch,Redirect } from "react-router-dom";
+
 
 import history from './components/pages/react_redux_user_panel/helpers/history';
 import { alertActions } from './components/pages/react_redux_user_panel/actions';
 
 // import PrivateRoute  from './components/pages/react_redux_user_panel/components/PrivateRoute';
 
-import { useDispatch, useSelector } from 'react-redux';
+// import { createBrowserHistory } from "history";
 
+import { useDispatch } from 'react-redux';
+
+
+// const history = createBrowserHistory();
 function App() {
 
-  const alert = useSelector(state => state.alert);
+  // const alert = useSelector(state => state.alert);
   const dispatch = useDispatch();
 
   useEffect(() => {
       history.listen((location, action) => {
         console.log(history);
           // clear alert on location change
-          //dispatch(alertActions.clear());
+          dispatch(alertActions.clear());
       });
   }, []);
 
   return (
     <>
-    <Router history={ history }>
+    <Router history={history}>
     <div className="">
        <Navbar />
       

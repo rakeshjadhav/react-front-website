@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { userActions } from './actions'; //
+import history from '../react_redux_user_panel/helpers/history';
+import { userActions } from './actions'; 
 
 function Login() {
 
-    
     const [inputs, setInputs] = useState({
-        username: '',
-        password: ''
+            username: '',
+            password: ''
     });
     const [submitted, setSubmitted] = useState(false);
     
@@ -20,9 +20,9 @@ function Login() {
     const alert = useSelector(state => state.alert);
     console.log(alert);
     // reset login status
-    // useEffect(() => { 
-    //     dispatch(userActions.logout()); 
-    // }, []);
+    useEffect(() => { 
+        dispatch(userActions.logout()); 
+    }, []);
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -40,7 +40,6 @@ function Login() {
            dispatch(userActions.login(username, password, from));
         }
     }
-
 
     return (
         <div>

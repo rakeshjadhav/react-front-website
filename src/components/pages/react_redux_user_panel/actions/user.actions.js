@@ -23,21 +23,9 @@ function register(user) {
             .then(
                 user => { 
                     dispatch(success());
-                    // history.push('/Registersucces');
-                    history.push(
-                        {
-                            pathname: '/Registersucces',
-                          
-                        });
-                        console.log("hiss");
-                        console.log(history);
+                    history.push('/LoginIndex');
+                    console.log(history);
                     dispatch(alertActions.success('Registration successful.. Please Login again !!!!!'));
-                    // history.push(
-                    //     { pathname: '/Sucess',
-                    //     }); 
-                    // setTimeout(function(){
-                    //     window.location.reload(1);
-                    //  }, 3000);
                 },
                 error => {
                     dispatch(failure(error.toString()));
@@ -102,7 +90,10 @@ function _userupdate(id,user) {
             .then(
                 user => { 
                     dispatch(success());  
-                    dispatch(alertActions.success('update successfully.. Please Login again !!!!!'));
+                    dispatch(alertActions.success('Profile update successfully!!!!!'));
+                    setTimeout(function(){
+                        window.location.reload(1);
+                     }, 1000);
 
                 },
                 error => {

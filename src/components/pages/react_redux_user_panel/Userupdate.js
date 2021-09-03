@@ -72,6 +72,10 @@ function Userupdate() {
                     </div>
                     <div className="modal-body">
                     <div className="row">
+                    {
+                         alert.message &&
+                        <div className={`alert ${alert.type}`}>{alert.message}</div>
+                    }
                     <form name="form"  onSubmit={handleSubmit}>
                         <article className="card-body">
                         

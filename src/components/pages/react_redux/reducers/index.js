@@ -6,6 +6,8 @@ import { registration } from '../../react_redux_user_panel/reducers/registration
 import { alert } from '../../react_redux_user_panel/reducers/alert.reducer';
 
 import {authentication} from '../../react_redux_user_panel/reducers/authentication.reducer';
+
+// import {authentication} from '../../react_redux_user_panel/reducers/authentication.reducer';
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
