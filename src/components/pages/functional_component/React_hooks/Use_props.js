@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+/* eslint react/prop-types: 0 */
+import React, { useEffect } from 'react';
+// import { NavLink } from 'react-router-dom';
 import '../../../../App.css';
 
 function Use_props (props) {

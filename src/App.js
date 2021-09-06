@@ -63,25 +63,25 @@ import Registersucces from './components/pages/react_redux_user_panel/Register.s
 // import $ from 'jquery';
 
 import history from './components/pages/react_redux_user_panel/helpers/history';
-import { alertActions } from './components/pages/react_redux_user_panel/actions';
+// import { alertActions } from './components/pages/react_redux_user_panel/actions';
 
 // import PrivateRoute  from './components/pages/react_redux_user_panel/components/PrivateRoute';
 
 // import { createBrowserHistory } from "history";
 
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 // const history = createBrowserHistory();
 function App () {
     // const alert = useSelector(state => state.alert);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     useEffect(() => {
-        history.listen((location, action) => {
-            console.log(history);
-            // clear alert on location change
-            dispatch(alertActions.clear());
-        });
+        // history.listen((location, action) => {
+        //     console.log(history);
+        //     // clear alert on location change
+        //     dispatch(alertActions.clear());
+        // });
     }, []);
 
     return (

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { alertActions, userActions } from './actions';
+import { userActions } from './actions';
 
-import history from './helpers/history';
+// import history from './helpers/history';
 
 function Register () {
     const [user, setUser] = useState({
@@ -21,10 +21,10 @@ function Register () {
     //    console.log('alert')
     //    console.log(alert);
     useEffect(() => {
-        history.listen((location, action) => {
-            // clear alert on location change
-            dispatch(alertActions.clear());
-        });
+        // history.listen((location, action) => {
+        //     // clear alert on location change
+        //     dispatch(alertActions.clear());
+        // });
     }, []);
 
     // useEffect(() => {

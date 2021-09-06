@@ -23,6 +23,7 @@ function register (user) {
                     dispatch(success());
                     history.push('/LoginIndex');
                     console.log(history);
+                    console.log(user);
                     dispatch(alertActions.success('Registration successful.. Please Login again !!!!!'));
                 },
                 error => {
@@ -87,6 +88,7 @@ function _userupdate (id, user) {
                 user => {
                     dispatch(success());
                     dispatch(alertActions.success('Profile update successfully!!!!!'));
+                    console.log(user);
                     setTimeout(function () {
                         window.location.reload(1);
                     }, 1000);

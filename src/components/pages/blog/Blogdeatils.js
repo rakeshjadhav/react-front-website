@@ -1,3 +1,4 @@
+/* eslint react/prop-types: 0 */
 import React, { Component } from 'react';
 import axios from 'axios';
 import Navbar from '../front/Navbar';
@@ -5,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 const url = ' http://localhost:8900/blog';
 
 class Blogdeatils extends Component {
+    
     constructor (props) {
         super(props);
 

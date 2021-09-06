@@ -249,7 +249,7 @@ class Main extends React.Component {
 
                             <div className="section-title" data-aos="zoom-out">
                                 <h2>Portfolio</h2>
-                                <p>What we've done</p>
+                                <p>What weve done</p>
                             </div>
 
                             <ul id="portfolio-flters" className="d-flex justify-content-end" data-aos="fade-up">

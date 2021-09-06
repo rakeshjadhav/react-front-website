@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { toast } from 'react-toastify';
 // import "../../../../App.css"
 
-import { Link, NavLink } from 'react-router-dom';
+// import { Link, NavLink } from 'react-router-dom';
 
 const AddPost = ({ addContact }) => {
     // { contacts, addContact }
@@ -52,12 +52,12 @@ const AddPost = ({ addContact }) => {
         toast.success('Contact added successfully!!');
         history.push('/index');
     };
-    const header_transparent = {
-        color: 'white',
-        backgroundColor: 'DodgerBlue',
-        padding: '10px',
-        fontFamily: 'Arial'
-    };
+    // const header_transparent = {
+    //     color: 'white',
+    //     backgroundColor: 'DodgerBlue',
+    //     padding: '10px',
+    //     fontFamily: 'Arial'
+    // };
     return (
         <section id="about" className="about">
             <div className="container">

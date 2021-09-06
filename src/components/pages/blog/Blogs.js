@@ -7,6 +7,7 @@ const Blogs = (props) => {
         if (datalist) {
             return datalist.map((item) => {
                 return (
+                    <>
                     <div>
                         <img src={`../../assets/img/${item.image}`} style ={{ width: '150px' }} alt="" />
                         <h2>{item.title}</h2>
@@ -14,6 +15,7 @@ const Blogs = (props) => {
                         <Link to = {`/BlogDeatils/${item.id}`} key={item.id} >Read More</Link>
                         <hr/>
                     </div>
+                    </>
 
                 );
             });

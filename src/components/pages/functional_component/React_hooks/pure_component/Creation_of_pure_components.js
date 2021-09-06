@@ -1,5 +1,5 @@
 
-import React, { PureComponent } from 'react';
+import React from 'react';
 
 class Creation_of_pure_components extends React.PureComponent {
     constructor (props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, GridList, GridListTile } from '@material-ui/core';
+import { GridList } from '@material-ui/core';
 
 import ProductCard from './ProductCard.controller';
 
