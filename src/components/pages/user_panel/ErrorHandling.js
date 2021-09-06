@@ -1,18 +1,17 @@
-import React from "react";
+import React from 'react';
 
+function ErrorHandling (rerror) {
+    console.log(rerror);
+    //     const errorList = rerror.map(lists => {
+    //     return <span>{lists}</span>
+    //   });
 
-function ErrorHandling(rerror) {
-   console.log(rerror);
-//     const errorList = rerror.map(lists => {
-//     return <span>{lists}</span>
-//   });
+    return (
 
-return (
-     
-    <>
-    {/* {errorList} */}
-    </>
-    
-);
-};
+        <>
+            {/* {errorList} */}
+        </>
+
+    );
+}
 export default ErrorHandling;

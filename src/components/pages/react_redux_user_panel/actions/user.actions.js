@@ -1,27 +1,25 @@
 import { userConstants } from '../constants';
 import { userService } from '../services';
 import { alertActions } from './';
-import { BrowserRouter as Router } from 'react';
-import history  from '../helpers/history';
-
+// import { BrowserRouter as Router } from 'react';
+import history from '../helpers/history';
 
 export const userActions = {
     login,
     logout,
     register,
-    userupdate: _userupdate,
+    userupdate: _userupdate
     // getAll,
     // delete: _delete
 };
 
-
-function register(user) {
+function register (user) {
     return dispatch => {
         dispatch(request(user));
 
         userService.register(user)
             .then(
-                user => { 
+                user => {
                     dispatch(success());
                     history.push('/LoginIndex');
                     console.log(history);
@@ -34,30 +32,29 @@ function register(user) {
             );
     };
 
-    function request(user) { 
-        return { type: userConstants.REGISTER_REQUEST, user }
-     }
-
-    function success(user) {
-         return { type: userConstants.REGISTER_SUCCESS, user } 
+    function request (user) {
+        return { type: userConstants.REGISTER_REQUEST, user };
     }
-    function failure(error) { 
-        return { type: userConstants.REGISTER_FAILURE, error } 
+
+    function success (user) {
+        return { type: userConstants.REGISTER_SUCCESS, user };
+    }
+    function failure (error) {
+        return { type: userConstants.REGISTER_FAILURE, error };
     }
 }
 
-function login(username, password, from) {
+function login (username, password, from) {
     return dispatch => {
         dispatch(request({ username }));
 
         userService.login(username, password)
             .then(
-                user => { 
+                user => {
                     dispatch(success(user));
                     history.push(from);
                     dispatch(alertActions.success('Login Succefuly'));
                     // console.log(from);
-                  
                 },
                 error => {
                     dispatch(failure(error.toString()));
@@ -65,36 +62,34 @@ function login(username, password, from) {
                 }
             );
     };
-    function request(user) { 
-        return { type: userConstants.LOGIN_REQUEST, user } 
+    function request (user) {
+        return { type: userConstants.LOGIN_REQUEST, user };
     }
-    function success(user) { 
-        return { type: userConstants.LOGIN_SUCCESS, user } 
+    function success (user) {
+        return { type: userConstants.LOGIN_SUCCESS, user };
     }
-    function failure(error) { 
-        return { type: userConstants.LOGIN_FAILURE, error } 
+    function failure (error) {
+        return { type: userConstants.LOGIN_FAILURE, error };
     }
 }
 
-function logout() {
+function logout () {
     userService.logout();
     return { type: userConstants.LOGOUT };
 }
 
-
-function _userupdate(id,user) {
+function _userupdate (id, user) {
     return dispatch => {
         dispatch(request(user));
 
-        userService.userupdate(id,user)
+        userService.userupdate(id, user)
             .then(
-                user => { 
-                    dispatch(success());  
+                user => {
+                    dispatch(success());
                     dispatch(alertActions.success('Profile update successfully!!!!!'));
-                    setTimeout(function(){
+                    setTimeout(function () {
                         window.location.reload(1);
-                     }, 1000);
-
+                    }, 1000);
                 },
                 error => {
                     dispatch(failure(error.toString()));
@@ -103,15 +98,14 @@ function _userupdate(id,user) {
             );
     };
 
-    function request(user) { 
-        return { type: userConstants.UPDATE_REQUEST, user }
-     }
-
-    function success(user) {
-         return { type: userConstants.UPDATE_SUCCESS, user } 
+    function request (user) {
+        return { type: userConstants.UPDATE_REQUEST, user };
     }
-    function failure(error) { 
-        return { type: userConstants.UPDATE_FAILURE, error } 
+
+    function success (user) {
+        return { type: userConstants.UPDATE_SUCCESS, user };
+    }
+    function failure (error) {
+        return { type: userConstants.UPDATE_FAILURE, error };
     }
 }
-

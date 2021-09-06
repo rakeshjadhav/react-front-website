@@ -1,26 +1,26 @@
-import { authHeader } from '../helpers';
-import { BrowserRouter as Router, useHistory,useLocation } from "react-router-dom";
-import axios from 'axios';
-
+// import { authHeader } from '../helpers';
+// import { BrowserRouter as Router, useHistory, useLocation } from 'react-router-dom';
+// import axios from 'axios';
+// import React from "react";
 export const userService = {
     login,
     logout,
     register,
-    userupdate: _userupdate,
+    userupdate: _userupdate
     // getAll,
     // getById,
     // update,
     // delete: _delete
 };
 
-function login(username, password) {
+function login (username, password) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     };
 
-    return fetch(`http://localhost:5000/api/users/authenticate`, requestOptions)
+    return fetch('http://localhost:5000/api/users/authenticate', requestOptions)
         .then(handleResponse)
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -30,8 +30,7 @@ function login(username, password) {
         });
 }
 
-function logout() {
-    
+function logout () {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
 }
@@ -54,7 +53,7 @@ function logout() {
 //     return fetch(`/users/${id}`, requestOptions).then(handleResponse);
 // }
 
-function register(user) {
+function register (user) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -62,11 +61,10 @@ function register(user) {
     };
 
     // return axios.post("http://localhost:5000/api/users/register",requestOptions ).then(handleResponse);
-    return fetch(`http://localhost:5000/api/users/register`, requestOptions).then(handleResponse);
+    return fetch('http://localhost:5000/api/users/register', requestOptions).then(handleResponse);
 }
 
-
-function _userupdate(id,user) {
+function _userupdate (id, user) {
     const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -105,7 +103,7 @@ function _userupdate(id,user) {
 //     return fetch(`/users/${id}`, requestOptions).then(handleResponse);
 // }
 
-function handleResponse(response) {
+function handleResponse (response) {
     // let location = useLocation();
     return response.text().then(text => {
         const data = text && JSON.parse(text);

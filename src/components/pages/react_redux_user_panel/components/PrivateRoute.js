@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-function PrivateRoute({ component: Component, roles, ...rest }) {
-    console.log("PrivateRoute");
+function PrivateRoute ({ component: Component, roles, ...rest }) {
+    console.log('PrivateRoute');
     return (
         <Route {...rest} render={props => {
             if (!localStorage.getItem('user')) {
                 // not logged in so redirect to login page with the return url
-                return <Redirect to={{ pathname: '/LoginIndex', state: { from: props.location } }} />
+                return <Redirect to={{ pathname: '/LoginIndex', state: { from: props.location } }} />;
             }
 
             // logged in so return component
-            return <Component {...props} />
+            return <Component {...props} />;
         }} />
     );
 }

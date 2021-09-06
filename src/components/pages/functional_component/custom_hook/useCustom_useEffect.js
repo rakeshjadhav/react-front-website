@@ -1,14 +1,12 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
-const useCustom_useEffect = (count) =>{
-
+const useCustom_useEffect = (count) => {
     useEffect(() => {
-        if(count >= 1){
+        if (count >= 1) {
             document.title = `App Likes(${count})`;
-        }else{
-            document.title =`React App`;
+        } else {
+            document.title = 'React App';
         }
-    },[count]);
-
-}
+    }, [count]);
+};
 export default useCustom_useEffect;
