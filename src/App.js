@@ -72,20 +72,30 @@ import history from './components/pages/react_redux_user_panel/helpers/history';
 // import { useDispatch } from 'react-redux';
 
 // const history = createBrowserHistory();
+import { ApolloClient, InMemoryCache, ApolloProvider,HttpLink, from,} from '@apollo/client';
+import {onError} from '@apollo/client/link/error';
+
 function App () {
+    const client = new ApolloClient({
+        uri: 'http://localhost:3000/graphql/',
+        cache: new InMemoryCache()
+      });
+
+
     // const alert = useSelector(state => state.alert);
     // const dispatch = useDispatch();
 
-    useEffect(() => {
-        // history.listen((location, action) => {
-        //     console.log(history);
-        //     // clear alert on location change
-        //     dispatch(alertActions.clear());
-        // });
-    }, []);
+    // useEffect(() => {
+    //     // history.listen((location, action) => {
+    //     //     console.log(history);
+    //     //     // clear alert on location change
+    //     //     dispatch(alertActions.clear());
+    //     // });
+    // }, []);
 
     return (
         <>
+           <ApolloProvider client = {client} >
             <Router history={history}>
                 <div className="">
                     <Navbar />
@@ -124,12 +134,13 @@ function App () {
                         <Route exact path ="/LoginIndex" component={LoginIndex} />
                         <Route exact path="/Homepage" component={Homepage} />
                         <Route exact path="/Registersucces" component={Registersucces} />
-                        <Redirect from="*" to="/" />
+                        {/* <Redirect from="*" to="/" /> */}
 
                     </Switch>
 
                 </div>
             </Router>
+            </ApolloProvider>
         </>
     );
 }
